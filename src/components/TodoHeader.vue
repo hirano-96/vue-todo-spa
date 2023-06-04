@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 // 親コンポーネントから渡されるものを定義する
 defineProps({
   msg: {

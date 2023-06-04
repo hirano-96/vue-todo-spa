@@ -110,3 +110,61 @@ width: 200px;
 ```
 
 
+## コンポーネント間の値の受け渡し
+* 1ファイルの情報量を最小限にするため、用途でファイルを分けた
+* 上記により、ファイル間で値の受け渡しをする必要が出てきたが、地味に躓くポイントだった
+  →　[参考](https://qiita.com/minuro/items/fa3ddd70ace5b99a1f90)
+
+---
+### 子コンポーネント側（受け取る側）
+```javascript
+export default {
+  data(){},
+  {/* 親コンポーネントから渡されるものを、子コンポーネントではどの型・変数で扱うか定義 */}
+  props: {
+    todos:{
+      type: Array
+    }
+  },
+  methods:{
+    hoge(){
+      const todo = {No: No++, Todo: this.newTodo, StatusId: 0}
+      // このファイルの、propsの中の、todosで定義した配列に、todoを追加
+      this.props.todos.push(todo)
+      this.newTodo = ''
+    }
+  }
+}
+
+```
+
+---
+### 親コンポーネント側（渡す側）
+```javascript
+// js部分
+export default{
+  data(){
+    // 子コンポーネントに渡す変数を定義しておく
+    return{
+      todos: Array
+    }
+  },
+  // 親コンポーネント内で呼び出す子コンポーネントを定義
+  components: {
+    TodoAdd,
+    TodoList
+  }
+}
+</script>
+```
+
+```html
+<template>
+  <!-- :(prop名)="(データ名)" -->
+  <!-- :(prop名) ⇨ v-bind:prop名の省略形 -->
+  <TodoAdd :todos='todos'/>
+  <TodoList />
+</template>
+```
+
+

@@ -1,8 +1,29 @@
+<script lang="ts">
+export default{
+
+  data(){
+    return {
+      newTodo: '',
+      todo: {}
+    }
+  },
+  props: {
+    todos:{
+      type: Array
+    }
+  },
+  emits: ['addTodo'],
+}
+
+</script>
+
+
+
 <template>
   <div>
     <label>NewTodo: </label>
-    <input class="new-todo" autofocus />
-    <button class="add-todo"> Add </button>
+    <input v-model="newTodo" class="new-todo" autofocus />
+    <button @click="$emit('addTodo',newTodo),newTodo = ''" class="add-todo" > Add </button>
   </div>
 </template>
 
