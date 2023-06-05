@@ -7,12 +7,6 @@ export default {
             headers: [
                 'No', 'Todo', 'Status', 'Button'
             ],
-            // todos: [
-            //     {No:1, Todo:'やること1', StatusId:1},
-            //     {No:2, Todo:'やること2', StatusId:2},
-            //     {No:3, Todo:'やること3', StatusId:3},
-            //     {No:4, Todo:'やること4', StatusId:1}
-            // ],
             status: [
                 {Id:0, Name: ''},
                 {Id:1, Name: '未着手'},
