@@ -12,6 +12,8 @@ export default{
       type: Array
     }
   },
+  mthods:{
+  },
   emits: ['addTodo'],
 }
 
@@ -23,7 +25,7 @@ export default{
   <div>
     <label>NewTodo: </label>
     <input v-model="newTodo" class="new-todo" autofocus />
-    <button @click="$emit('addTodo',newTodo),newTodo = ''" class="add-todo" > Add </button>
+    <button @click="$emit('addTodo',newTodo), newTodo=''" class="add-todo" > Add </button>
   </div>
 </template>
 

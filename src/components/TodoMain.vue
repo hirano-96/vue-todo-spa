@@ -24,6 +24,10 @@ export default{
           return 
       }
       this.todos.push(todo)
+    },
+    deleteTodo(no){
+      this.todos.splice(no,1)
+      console.log(this.todos)
     }
   }
 }
@@ -31,7 +35,7 @@ export default{
 
 <template>
   <TodoAdd @addTodo="(newTodo) => addTodo(newTodo)"/>
-  <TodoList :todos='todos'/>
+  <TodoList :todos="todos" @deleteTodo="(no) => deleteTodo(no)"/>
 </template>
 
 <style scoped>

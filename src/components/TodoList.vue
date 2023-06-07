@@ -27,11 +27,11 @@ export default {
         getStatus(StatusId){
             return this.status[StatusId].Name
         },
-        deleteTodo(No){
-            this.props.todos = this.props.todos.splice(this.todos.indexOf(No-1),1)
-            return this.todos
+        changeStatus(No,e){
+            this.props.todos[No].StatusId = e.target.value
         }
     },
+    emits: ['deleteTodo'],
 }
 </script>
 
@@ -55,7 +55,7 @@ export default {
                     </select>
                 </td>
                 <td>
-                    <button class="del-todo" v-on:click="deleteTodo(todo.No)">Delete</button>
+                    <button class="del-todo" @click="$emit('deleteTodo', parseInt(todo.No))">Delete</button>
                 </td>
             </tr>
         </tbody>
