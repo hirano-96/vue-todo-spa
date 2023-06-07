@@ -27,13 +27,9 @@ export default{
     },
     deleteTodo(no){
       for(const i in this.todos){
-        
         if(this.todos[i].No == no){
           this.todos.splice(i,1)
-        }else{
-          console.log('違う')
         }
-        console.log(no)
       }
     }
   }
