@@ -26,8 +26,15 @@ export default{
       this.todos.push(todo)
     },
     deleteTodo(no){
-      this.todos.splice(no,1)
-      console.log(this.todos)
+      for(const i in this.todos){
+        
+        if(this.todos[i].No == no){
+          this.todos.splice(i,1)
+        }else{
+          console.log('違う')
+        }
+        console.log(no)
+      }
     }
   }
 }
