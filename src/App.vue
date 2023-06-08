@@ -16,20 +16,6 @@ import TodoMain from './components/TodoMain.vue'
 </template>
 
 <style scoped>
-header {
-  position: absolute;
-  width: 600px;
-  height: 150px;
-  left: 100px;
-  top: 0px;
-
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 60px;
-  display: flex;
-  align-items: center;
-}
-
 .logo {
   display: block;
   /* 文字との間のみ隙間をもうける */
@@ -42,7 +28,6 @@ header {
     display: flex;
     place-items: left;
     flex-wrap: wrap;
-    
   }
 }
 </style>
