@@ -31,7 +31,7 @@ export default{
           this.todos.splice(i,1)
         }
       }
-    }
+    },
   }
 }
 </script>

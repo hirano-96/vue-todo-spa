@@ -50,7 +50,7 @@ export default {
                 <td>{{ todo.No }}</td>
                 <td style="text-align: left;">{{ todo.Todo }}</td>
                 <td>
-                    <select v-model="this.status[todo.StatusId].Name">
+                    <select v-model="todo.StatusId">
                         <option class="sel" v-for="st in status" :key="st.Id">{{ st.Name }}</option>
                     </select>
                 </td>
